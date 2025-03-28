@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color: #f34f4f;">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">App Development</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#algorithm">Algorithm</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#reports">Classification Report</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="text-center">
+        <h1 style="color: rgb(255, 255, 255);">YouTube Spam Comments Detection</h1>
+        <p class="font-weight-bold" style="color: rgb(255, 255, 255);">Using Naive Bayes Algorithm</p>
+    </header>
+
+    <div class="container mt-5 text-center" id="spam-model">
+        <h3>Enter Your Comment Below</h3>
+        <form action="{{ url_for('predict') }}" method="POST">
+            <textarea name="comment" rows="5" cols="80"></textarea><br/>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+    </div>
+
+    <footer class="bg-dark text-white mt-5 py-4">
+        <div class="container">
+            <h5>Batch 9</h5>
+        </div>
+    </footer>
+</body>
+</html>

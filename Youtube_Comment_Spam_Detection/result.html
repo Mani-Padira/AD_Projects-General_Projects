@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="text-center">
+        <h1>YouTube Spam Comments Detection</h1>
+        <p class="font-weight-bold">Using Naive Bayes Algorithm</p>
+    </header>
+
+    <div class="container text-center">
+        <h3>Your Comment is Classified as:</h3>
+        {% if prediction == 1 %}
+            <p class="text-danger font-weight-bold">Spam Comment</p>
+        {% else %}
+            <p class="text-success font-weight-bold">Not a Spam Comment</p>
+        {% endif %}
+        <a href="{{ url_for('home') }}" class="btn btn-primary">Go back</a>
+    </div>
+</body>
+</html>
